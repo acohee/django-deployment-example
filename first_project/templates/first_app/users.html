@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Django Level Two</title>
+  </head>
+  <body>
+    <h1>Here are your users:</h1>
+
+    <div class="djangothree">
+      {% if user_records %}
+
+        {% for user in user_records %}
+        <ol>
+          <li>User Info</li>
+            <ul>
+              <li>First name: {{ user.first_name }}</li>
+              <li>Last name: {{ user.last_name }}</li>
+              <li>Email: {{ user.email }}</li>
+            </ul>
+        </ol>
+        {% endfor %}
+
+      {% else %}
+      <p>NO USER RECORDS FOUND!</p>
+      {% endif %}
+
+    </div>
+
+  </body>
+</html>
